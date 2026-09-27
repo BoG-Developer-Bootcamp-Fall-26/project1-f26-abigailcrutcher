@@ -29,7 +29,11 @@ async function getPokemon(id) {
 }
 
 async function showPokemon() {
-    let data = await getPokemon(currentId);
+    let id = currentId;
+    let data = await getPokemon(id);
+    if (id !== currentId) {
+        return;
+    }
 
     let nameText = document.getElementById("pokemon-name");
     nameText.textContent = data.name;
@@ -72,6 +76,9 @@ async function showPokemon() {
         move.textContent = data.moves[i].move.name;
         movesBox.appendChild(move);
     }
+
+    let statsPanel = document.getElementById("stats-panel");
+    statsPanel.scrollTop = 0;
 }
 
 function goToPrevious() {
