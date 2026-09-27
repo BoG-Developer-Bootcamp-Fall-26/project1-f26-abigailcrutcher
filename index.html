@@ -11,38 +11,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-white font-[Inter]">
-    <h1 class="mt-9 text-center text-[64px] font-bold">Bits of Good Mid-Semester Project</h1>
-    <main class="mt-[30px] flex justify-center gap-[244px] pl-3">
-        <section id="left-column" class="flex w-[466px] flex-col">
-            <div id="image-box" class="flex h-[466px] w-[466px] items-center justify-center border-4 border-black">
-                <img id="pokemon-image" class="w-[450px] [image-rendering:pixelated]" alt="">
+    <h1 class="mt-6 px-4 text-center text-[32px] font-bold sm:text-[48px] xl:mt-9 xl:px-0 xl:text-[64px]">Bits of Good Mid-Semester Project</h1>
+    <main class="mt-6 mb-10 flex flex-col items-center gap-12 px-4 xl:mt-[30px] xl:mb-0 xl:flex-row xl:items-start xl:justify-center xl:gap-[244px] xl:pl-3 xl:pr-0">
+        <section id="left-column" class="flex w-full max-w-[466px] flex-col xl:w-[466px]">
+            <div id="image-box" class="flex aspect-square w-full items-center justify-center border-4 border-black xl:h-[466px] xl:w-[466px]">
+                <img id="pokemon-image" class="w-[96%] [image-rendering:pixelated] xl:w-[450px]" alt="">
             </div>
-            <div id="name-box" class="mt-[33px] flex h-[66px] w-[462px] items-center justify-center rounded-lg border border-black bg-[#E8E8E8]">
-                <p id="pokemon-name" class="text-[36px]"></p>
+            <div id="name-box" class="mt-6 flex h-[56px] w-full items-center xl:mt-[33px] xl:h-[66px] xl:w-[462px] justify-center rounded-lg border border-black bg-[#E8E8E8]">
+                <p id="pokemon-name" class="text-[28px] xl:text-[36px]"></p>
             </div>
-            <p class="mt-10 text-2xl font-bold">Types:</p>
-            <div id="types-box" class="mt-[17px] flex h-10 gap-2">
+            <p class="mt-6 text-2xl font-bold xl:mt-10">Types:</p>
+            <div id="types-box" class="mt-3 flex h-10 gap-2 xl:mt-[17px]">
             </div>
-            <div id="arrow-buttons" class="ml-[37px] mt-11 flex gap-[42px]">
-                <button id="previous-button" class="flex h-[68px] w-[174px] items-center justify-center rounded-md bg-[#E8E8E8]">
-                    <img class="h-[60px] w-[60px]" src="images/left-arrow.png" alt="Previous">
+            <div id="arrow-buttons" class="mt-8 flex justify-center gap-6 xl:ml-[37px] xl:mt-11 xl:justify-start xl:gap-[42px]">
+                <button id="previous-button" class="flex h-[60px] w-[140px] xl:h-[68px] xl:w-[174px] items-center justify-center rounded-md bg-[#E8E8E8]">
+                    <img class="h-[52px] w-[52px] xl:h-[60px] xl:w-[60px]" src="images/left-arrow.png" alt="Previous">
                 </button>
-                <button id="next-button" class="flex h-[68px] w-[174px] items-center justify-center rounded-md bg-[#E8E8E8]">
-                    <img class="h-[60px] w-[60px]" src="images/right-arrow.png" alt="Next">
+                <button id="next-button" class="flex h-[60px] w-[140px] xl:h-[68px] xl:w-[174px] items-center justify-center rounded-md bg-[#E8E8E8]">
+                    <img class="h-[52px] w-[52px] xl:h-[60px] xl:w-[60px]" src="images/right-arrow.png" alt="Next">
                 </button>
             </div>
         </section>
-        <section id="right-column" class="flex w-[486px] flex-col items-center">
-            <h2 id="panel-title" class="-mt-[25px] text-[36px] font-bold">Info</h2>
-            <div id="stats-panel" class="mt-[31px] h-[598px] w-[486px] overflow-y-auto bg-[#E8E8E8] px-[35px] py-8 text-[36px] leading-[44px]">
+        <section id="right-column" class="flex w-full max-w-[486px] flex-col items-center xl:w-[486px]">
+            <h2 id="panel-title" class="text-[32px] font-bold xl:-mt-[25px] xl:text-[36px]">Info</h2>
+            <div id="stats-panel" class="mt-4 h-[420px] w-full overflow-y-auto bg-[#E8E8E8] px-6 py-6 text-[28px] leading-[36px] xl:mt-[31px] xl:h-[598px] xl:w-[486px] xl:px-[35px] xl:py-8 xl:text-[36px] xl:leading-[44px]">
                 <div id="info-box">
                 </div>
                 <div id="moves-box" class="hidden">
                 </div>
             </div>
-            <div id="tab-buttons" class="mt-[84px] flex gap-[42px]">
-                <button id="info-button" class="h-[68px] w-[174px] rounded-md bg-[#7CFF79] text-[36px]">Info</button>
-                <button id="moves-button" class="h-[68px] w-[174px] rounded-md bg-[#E8E8E8] text-[36px]">Moves</button>
+            <div id="tab-buttons" class="mt-8 flex gap-6 xl:mt-[84px] xl:gap-[42px]">
+                <button id="info-button" class="h-[60px] w-[140px] xl:h-[68px] xl:w-[174px] rounded-md bg-[#7CFF79] text-[28px] xl:text-[36px]">Info</button>
+                <button id="moves-button" class="h-[60px] w-[140px] xl:h-[68px] xl:w-[174px] rounded-md bg-[#E8E8E8] text-[28px] xl:text-[36px]">Moves</button>
             </div>
         </section>
     </main>
