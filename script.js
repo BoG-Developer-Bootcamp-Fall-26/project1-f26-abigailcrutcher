@@ -1,4 +1,5 @@
 let currentId = 1;
+let shownId = 1;
 let lastId = 1025;
 
 let typeColors = {
@@ -24,13 +25,25 @@ let typeColors = {
 
 async function getPokemon(id) {
     let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + id);
+    if (response.ok === false) {
+        throw new Error("PokeAPI answered with status " + response.status);
+    }
     let data = await response.json();
     return data;
 }
 
 async function showPokemon() {
     let id = currentId;
-    let data = await getPokemon(id);
+    let data;
+    try {
+        data = await getPokemon(id);
+    } catch (error) {
+        console.error("Could not load Pokémon " + id, error);
+        if (id === currentId) {
+            currentId = shownId;
+        }
+        return;
+    }
     if (id !== currentId) {
         return;
     }
@@ -39,7 +52,11 @@ async function showPokemon() {
     nameText.textContent = data.name;
 
     let image = document.getElementById("pokemon-image");
-    image.src = data.sprites.front_default;
+    if (data.sprites.front_default) {
+        image.src = data.sprites.front_default;
+    } else {
+        image.removeAttribute("src");
+    }
     image.alt = data.name;
 
     let typesBox = document.getElementById("types-box");
@@ -79,6 +96,8 @@ async function showPokemon() {
 
     let statsPanel = document.getElementById("stats-panel");
     statsPanel.scrollTop = 0;
+
+    shownId = id;
 }
 
 function goToPrevious() {
