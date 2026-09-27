@@ -11,6 +11,10 @@ async function showPokemon() {
 
     let nameText = document.getElementById("pokemon-name");
     nameText.textContent = data.name;
+
+    let image = document.getElementById("pokemon-image");
+    image.src = data.sprites.front_default;
+    image.alt = data.name;
 }
 
 showPokemon();
