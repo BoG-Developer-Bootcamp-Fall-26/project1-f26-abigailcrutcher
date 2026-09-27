@@ -16,6 +16,16 @@ async function showPokemon() {
     let image = document.getElementById("pokemon-image");
     image.src = data.sprites.front_default;
     image.alt = data.name;
+
+    let typesBox = document.getElementById("types-box");
+    typesBox.innerHTML = "";
+    for (let i = 0; i < data.types.length; i++) {
+        let typeName = data.types[i].type.name;
+        let badge = document.createElement("span");
+        badge.className = "rounded-lg px-5 py-1 text-2xl";
+        badge.textContent = typeName;
+        typesBox.appendChild(badge);
+    }
 }
 
 function goToPrevious() {
