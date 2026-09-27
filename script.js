@@ -47,6 +47,23 @@ async function showPokemon() {
         badge.textContent = typeName;
         typesBox.appendChild(badge);
     }
+
+    let infoBox = document.getElementById("info-box");
+    infoBox.innerHTML = "";
+
+    let height = document.createElement("p");
+    height.textContent = "height: " + (data.height / 10).toFixed(1) + "m";
+    infoBox.appendChild(height);
+
+    let weight = document.createElement("p");
+    weight.textContent = "weight: " + (data.weight / 10).toFixed(1) + "kg";
+    infoBox.appendChild(weight);
+
+    for (let i = 0; i < data.stats.length; i++) {
+        let stat = document.createElement("p");
+        stat.textContent = data.stats[i].stat.name + ": " + data.stats[i].base_stat;
+        infoBox.appendChild(stat);
+    }
 }
 
 function goToPrevious() {
