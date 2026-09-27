@@ -64,6 +64,14 @@ async function showPokemon() {
         stat.textContent = data.stats[i].stat.name + ": " + data.stats[i].base_stat;
         infoBox.appendChild(stat);
     }
+
+    let movesBox = document.getElementById("moves-box");
+    movesBox.innerHTML = "";
+    for (let i = 0; i < data.moves.length; i++) {
+        let move = document.createElement("p");
+        move.textContent = data.moves[i].move.name;
+        movesBox.appendChild(move);
+    }
 }
 
 function goToPrevious() {
