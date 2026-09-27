@@ -88,6 +88,42 @@ function goToNext() {
     }
 }
 
+function showInfo() {
+    document.getElementById("panel-title").textContent = "Info";
+
+    document.getElementById("info-box").classList.remove("hidden");
+    document.getElementById("moves-box").classList.add("hidden");
+
+    let infoButton = document.getElementById("info-button");
+    infoButton.classList.remove("bg-[#E8E8E8]");
+    infoButton.classList.add("bg-[#7CFF79]");
+
+    let movesButton = document.getElementById("moves-button");
+    movesButton.classList.remove("bg-[#7CFF79]");
+    movesButton.classList.add("bg-[#E8E8E8]");
+}
+
+function showMoves() {
+    document.getElementById("panel-title").textContent = "Moves";
+
+    document.getElementById("moves-box").classList.remove("hidden");
+    document.getElementById("info-box").classList.add("hidden");
+
+    let movesButton = document.getElementById("moves-button");
+    movesButton.classList.remove("bg-[#E8E8E8]");
+    movesButton.classList.add("bg-[#7CFF79]");
+
+    let infoButton = document.getElementById("info-button");
+    infoButton.classList.remove("bg-[#7CFF79]");
+    infoButton.classList.add("bg-[#E8E8E8]");
+}
+
+let infoButton = document.getElementById("info-button");
+infoButton.addEventListener("click", showInfo);
+
+let movesButton = document.getElementById("moves-button");
+movesButton.addEventListener("click", showMoves);
+
 let previousButton = document.getElementById("previous-button");
 previousButton.addEventListener("click", goToPrevious);
 
